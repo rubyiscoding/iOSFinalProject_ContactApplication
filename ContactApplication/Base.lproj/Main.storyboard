@@ -65,8 +65,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="asX-2v-lLm">
-                                <rect key="frame" x="8" y="110" width="377" height="699"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="asX-2v-lLm">
+                                <rect key="frame" x="8" y="111" width="377" height="699"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C8I-el-YA3">
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="34"/>
@@ -122,6 +122,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eba-jm-JSC">
                                         <rect key="frame" x="0.0" y="126" width="377" height="573"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <gestureRecognizers/>
                                     </view>
                                 </subviews>
                             </stackView>

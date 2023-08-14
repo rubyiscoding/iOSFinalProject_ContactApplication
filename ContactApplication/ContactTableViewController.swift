@@ -1,3 +1,10 @@
+//
+//  ContactTableViewController.swift
+//  ContactApplication
+//
+//  Created by Pink Zen on 2023-07-05.
+//
+
 import UIKit
 
 class ContactTableViewController: UITableViewController ,UISearchResultsUpdating {
@@ -11,13 +18,12 @@ class ContactTableViewController: UITableViewController ,UISearchResultsUpdating
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
         
         // Add search bar to the navigation bar
-                searchController = UISearchController(searchResultsController: nil)
-                searchController.searchResultsUpdater = self
-                navigationItem.searchController = searchController
-                definesPresentationContext = true
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
         self.navigationItem.leftBarButtonItem = self.editButtonItem
         let sortingSegmentedControl = UISegmentedControl(items: ["First Name", "Last Name", "Phone Number"])
                 sortingSegmentedControl.addTarget(self, action: #selector(sortingOptionChanged(_:)), for: .valueChanged)
@@ -73,6 +79,15 @@ class ContactTableViewController: UITableViewController ,UISearchResultsUpdating
                 contact = contactsList.allContacts[indexPath.row]
             }
             cell.textLabel!.text = "\(contact.firstName) \(contact.lastName)"
+        
+            // Apply subtle shadow to the cell
+            cell.contentView.layer.cornerRadius = 8
+            cell.contentView.layer.masksToBounds = true
+            cell.contentView.layer.shadowColor = UIColor.black.cgColor
+            cell.contentView.layer.shadowOpacity = 0.2
+            cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
+            cell.contentView.layer.shadowRadius = 4
+        
             return cell
         }
     
