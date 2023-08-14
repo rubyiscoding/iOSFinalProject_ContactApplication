@@ -88,6 +88,11 @@ class ContactTableViewController: UITableViewController ,UISearchResultsUpdating
             cell.contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
             cell.contentView.layer.shadowRadius = 4
         
+        // Customize cell selection color
+            cell.selectionStyle = .default
+            cell.selectedBackgroundView = UIView()
+            cell.selectedBackgroundView?.backgroundColor = UIColor.lightGray
+
             return cell
         }
     
