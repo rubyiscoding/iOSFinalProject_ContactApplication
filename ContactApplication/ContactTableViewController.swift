@@ -29,6 +29,7 @@ class ContactTableViewController: UITableViewController ,UISearchResultsUpdating
                 sortingSegmentedControl.addTarget(self, action: #selector(sortingOptionChanged(_:)), for: .valueChanged)
                 navigationItem.titleView = sortingSegmentedControl
     }
+    
     @objc func sortingOptionChanged(_ sender: UISegmentedControl) {
            switch sender.selectedSegmentIndex {
            case 0:
@@ -96,13 +97,30 @@ class ContactTableViewController: UITableViewController ,UISearchResultsUpdating
             return cell
         }
     
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           
         let firstName = contactsList.allContacts[indexPath.row].firstName
         let lastName = contactsList.allContacts[indexPath.row].lastName
 
         print("\(firstName) \(lastName)")
-       }
+
+        // Deselect the cell after selection
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let selectedCell = tableView.cellForRow(at: indexPath) {
+            UIView.animate(withDuration: 0.2) {
+                selectedCell.backgroundColor = UIColor.systemBlue // Change the background color of the selected cell
+            }
+            // Delay the color reset using a timer
+            Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { _ in
+                UIView.animate(withDuration: 0.2) {
+            selectedCell.backgroundColor = UIColor.clear // Reset the background color
+                    }
+                }
+        }
+    }
+
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -159,8 +177,9 @@ class ContactTableViewController: UITableViewController ,UISearchResultsUpdating
 
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 40 // Set the height of the header view
+        
     }
 
-
+    
 
 }
