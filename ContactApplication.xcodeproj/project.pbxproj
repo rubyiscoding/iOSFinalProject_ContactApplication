@@ -64,6 +64,7 @@
 		2274EC6229467484009F9684 /* ContactApplication */ = {
 			isa = PBXGroup;
 			children = (
+				E5CE686E2A8A97E00068A54F /* Images */,
 				2274EC6329467484009F9684 /* AppDelegate.swift */,
 				2274EC7A29467557009F9684 /* ContactTableViewController.swift */,
 				2274EC842946A113009F9684 /* ContactsDetailsViewController.swift */,
@@ -77,6 +78,13 @@
 				2274EC822946869C009F9684 /* ContactsList.swift */,
 			);
 			path = ContactApplication;
+			sourceTree = "<group>";
+		};
+		E5CE686E2A8A97E00068A54F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
