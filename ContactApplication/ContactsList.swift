@@ -15,10 +15,12 @@ class ContactsList{
         let phoneNumber = ["3654402624","9842035766"]
         
         let names_with_index = firstName.enumerated()
-                for (index,_) in names_with_index {
-                    allContacts.append(Contacts(firstName: firstName[index], lastName: lastName[index], phoneNumber: phoneNumber[index]))
-                }
+        for (index,_) in names_with_index {
+            allContacts.append(Contacts(firstName: firstName[index], lastName: lastName[index], phoneNumber: phoneNumber[index]))
+        }
     }
+    
+    
     
     func deleteContact(index: Int){
         allContacts.remove(at: index)
@@ -35,4 +37,18 @@ class ContactsList{
         return contact
     }
     
+    // Sort contacts by first name: kamal67802
+    func sortContactsByFirstName() {
+        allContacts.sort { $0.firstName < $1.firstName }
+    }
+    
+    // Sort contacts by last name: kamal67802
+    func sortContactsByLastName() {
+        allContacts.sort { $0.lastName < $1.lastName }
+    }
+    
+    // Sort contacts by phone number: kamal67802
+    func sortContactsByPhoneNumber() {
+        allContacts.sort { $0.phoneNumber < $1.phoneNumber }
+    }
 }

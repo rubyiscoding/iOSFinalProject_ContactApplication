@@ -5,9 +5,10 @@
 //  Created by Pink Zen on 2023-07-05.
 //
 
+
 import UIKit
 
-class ContactsDetailsViewController: UIViewController {
+class ContactsDetailsViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var firstNameTextField: UITextField!
     
@@ -21,10 +22,24 @@ class ContactsDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        //kamal67802
+        firstNameTextField.delegate = self
+        lastNameTextField.delegate = self
+        phoneNumberTextField.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tapGesture)
     }
     
-    
+    @objc func dismissKeyboard() {
+            view.endEditing(true)
+        }
+        
+        // UITextFieldDelegate method to dismiss keyboard on "Return" key press
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if contacts != nil{
@@ -46,16 +61,4 @@ class ContactsDetailsViewController: UIViewController {
             }
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
