@@ -137,5 +137,25 @@ class ContactTableViewController: UITableViewController ,UISearchResultsUpdating
         }
         
     }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .clear
+        
+        let titleLabel = UILabel()
+        titleLabel.frame = CGRect(x: 16, y: -8, width: tableView.frame.width - 16, height: 30)
+        titleLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 30)
+        titleLabel.textColor = .black
+        titleLabel.text = "Contacts"
+        headerView.addSubview(titleLabel)
+        
+        return headerView
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40 // Set the height of the header view
+    }
+
+
 
 }
