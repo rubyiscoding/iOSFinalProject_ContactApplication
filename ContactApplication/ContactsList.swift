@@ -10,9 +10,9 @@ import Foundation
 class ContactsList{
     var allContacts = [Contacts]()
     init(){
-        let firstName = ["Amy","John"]
-        let lastName = ["Adams","Doe"]
-        let phoneNumber = ["3654402624","9842035766"]
+        let firstName = ["Amy","John", "Zion", "Queen", "Martha", "Ruby", "Eddie"]
+        let lastName = ["Adams","Doe", "Wick","Baba","Stewart","Chaulagain","Vedder"]
+        let phoneNumber = ["3654402624","9842035766", "657278347", "908762389", "729989255", "231908654", "205637889"]
         
         let names_with_index = firstName.enumerated()
         for (index,_) in names_with_index {
