@@ -19,6 +19,9 @@ class ContactTableViewController: UITableViewController ,UISearchResultsUpdating
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
+        // Adjust content insets for the table view
+        tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
+        
         // Add search bar to the navigation bar
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -96,8 +99,6 @@ class ContactTableViewController: UITableViewController ,UISearchResultsUpdating
 
             return cell
         }
-    
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let firstName = contactsList.allContacts[indexPath.row].firstName
