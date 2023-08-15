@@ -23,7 +23,7 @@ A simple contact management application for iOS that allows users to manage and 
 - Documented code by providing helpful comments for other team members to understand.
 
    
-3. Kamaljit Kaur (): Contributions:
+3. Kamaljit Kaur (A00278618): 
 
 - Designed and implemented the user interface of the ContactsDetailsViewController, including text field layout and gesture recognition.
 - Developed the logic for updating and saving contact details in the ContactsDetailsViewController.
