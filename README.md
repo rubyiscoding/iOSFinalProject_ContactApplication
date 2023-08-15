@@ -1,6 +1,6 @@
 # iOSFinalProject_ContactApplication
 
-##Contact Application
+## Contact Application
 
 A simple contact management application for iOS that allows you to manage and organize your contacts efficiently.This project is developed as the final project for the first semester of MAPD course.
 
